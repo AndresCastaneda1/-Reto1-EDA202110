@@ -69,9 +69,28 @@ public class ArregloDinamico implements IArregloDinamico {
 		}
 
 		public String eliminar(String dato) {
-			// TODO implementar
-			// Recomendacion: Usar el criterio de comparacion natural (metodo compareTo()) definido en Strings.
-			return null;
+			
+		String buscado="No existe el elemento a eliminar";
+		int i =0;
+		boolean x = false;
+		while(i<tamanoAct && !x)
+		{
+			if(elementos[i].compareTo(dato)==0)
+			{
+				buscado= elementos[i];
+				x=true;
+
+			}
+			i++;
+		}
+		while(i<tamanoAct)
+		{
+			elementos[i-1]=elementos[i];
+			i++;
+		}
+		tamanoAct--;
+		return buscado;
+			
 		}
 
 }
