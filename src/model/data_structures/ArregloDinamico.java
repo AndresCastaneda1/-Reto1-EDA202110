@@ -133,6 +133,50 @@ public  class ArregloDinamico<T extends Comparable<T>> implements IArregloDinami
 	{
 		return 0;
 	}
+	public T darPrimer()
+	{
+		return elementos[0];
+	}
+
+	public T darUlt()
+	{
+		return elementos[tamanoAct-1];
+	}
+	public int darI(T o)
+	{
+
+		int i = 0;
+		boolean cen = false;
+		while(i<tamanoMax && !cen)
+		{
+			if(elementos[i].compareTo(o)==0)
+			{
+				cen = true;
+			}
+			else {
+				i++;
+			}
+		}
+		return i;
+	}
+		public int darSigI(T o)
+	{
+		int i =0;
+		boolean cen = false;
+		while(i<tamanoAct && !cen)
+		{
+			if(elementos[i].equals(o))
+			{
+				cen = true;
+			}
+			else {
+				i++;
+			}
+		}
+		return i++;
+	}
+	
+	
 
 
 
